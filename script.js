@@ -92,7 +92,7 @@ function updateStats() {
     if (totalGuardiansEl) totalGuardiansEl.textContent = guardians.length + ' ولي أمر';
     if (totalCashiersEl) totalCashiersEl.textContent = cashiers.length + ' كاشير';
 
-    // آخر طالبيْن للدashboard
+    // آخر طالبيّن للدashboard
     renderStudentsTable('students-dashboard-body', students.slice(-2).reverse());
 }
 
@@ -125,7 +125,6 @@ function renderStudentsTable(tbodyId, data) {
         if (isListPage) {
             const actionsCell = row.insertCell();
             actionsCell.classList.add('actions-cell');
-            actionsCell.style.flexDirection = 'row-reverse';
             actionsCell.innerHTML = `
                 <button class="btn-danger" onclick="deleteItem('student', ${student.id})">
                     <i class="fas fa-trash-alt"></i>
@@ -158,7 +157,6 @@ function renderGuardiansTable() {
         
         const actionsCell = row.insertCell();
         actionsCell.classList.add('actions-cell');
-        actionsCell.style.flexDirection = 'row-reverse'; 
         actionsCell.innerHTML = `
             <button class="btn-danger" onclick="alert('حذف ولي الأمر ليس إجراءً مباشراً في هذا النظام.')">
                 <i class="fas fa-trash-alt"></i>
@@ -191,7 +189,6 @@ function renderCashiersTable() {
         
         const actionsCell = row.insertCell();
         actionsCell.classList.add('actions-cell');
-        actionsCell.style.flexDirection = 'row-reverse'; 
         actionsCell.innerHTML = `
             <button class="btn-danger" onclick="deleteItem('cashier', ${cashier.id})">
                 <i class="fas fa-trash-alt"></i>
@@ -220,7 +217,6 @@ function renderUsersTable() {
         
         const actionsCell = row.insertCell();
         actionsCell.classList.add('actions-cell');
-        actionsCell.style.flexDirection = 'row-reverse'; 
         actionsCell.innerHTML = `
             <button class="btn-danger" onclick="deleteItem('user', ${user.id})">
                 <i class="fas fa-trash-alt"></i>
@@ -323,12 +319,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // إضافة حدث للزر الجانبي
     const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const main = document.querySelector('.main-content');
+    
     if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', () => {
-            const sidebar = document.querySelector('.sidebar');
-            const main = document.querySelector('.main-content');
+        sidebarToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             sidebar.classList.toggle('hidden');
             main.classList.toggle('sidebar-hidden');
         });
     }
+
+    // إغلاق القائمة عند النقر خارجها على الجوال
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                sidebar.classList.add('hidden');
+                main.classList.remove('sidebar-hidden');
+            }
+        }
+    });
+
+    // إغلاق القائمة عند اختيار صفحة على الجوال
+    const sidebarLinks = sidebar.querySelectorAll('nav ul li a');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.add('hidden');
+                main.classList.remove('sidebar-hidden');
+            }
+        });
+    });
 });
