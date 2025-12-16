@@ -55,11 +55,10 @@ body {
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
     z-index: 100;
     transition: transform 0.3s ease;
-     transform: translateX(0%);
 }
 
 .sidebar.hidden {
-    transform: translateX(500%);
+    transform: translateX(100%);
 }
 
 /* هوية المنصة في الشريط الجانبي */
@@ -124,7 +123,7 @@ body {
    المحتوى الرئيسي (Main Content)
    =========================== */
 .main-content {
-    margin-right: 250px; /* تعويض عرض الشريط الجانبي */
+    margin-right: 250px;
     flex: 1;
     padding: 20px 40px;
     transition: margin-right 0.3s ease;
@@ -188,20 +187,17 @@ header {
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 15%;
+    left: 0;
     transform: translateX(-50%);
 }
 
 .user-profile .avatar iconify-icon {
     font-size: 2.5rem;
-     color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .user-profile .info h3 {
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .user-profile .info h3 iconify-icon {
@@ -210,7 +206,7 @@ header {
 
 .user-profile .info span {
     font-size: 12px;
-    color: var(--gra-text);
+    color: var(--gray-text);
 }
 
 /* هيدر قوائم مثل صفحة الطلاب */
@@ -244,6 +240,30 @@ header {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
 }
 
+.stat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-card .text h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+.stat-card .icon-circle {
+    width: 60px;
+    height: 60px;
+    background: #f0f5f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
 /* كروت الإجراءات السريعة */
 .action-card {
     text-align: center;
@@ -251,9 +271,18 @@ header {
 }
 
 .action-card .icon-large {
-    font-size: 30px;
-    color: #ccc;
+    font-size: 50px;
+    color: var(--primary-color);
     margin-bottom: 15px;
+}
+
+.action-card .icon-large i {
+    color: var(--primary-color);
+}
+
+.action-card h3 {
+    margin-bottom: 20px;
+    color: #333;
 }
 
 /* ===========================
@@ -281,8 +310,12 @@ header {
     padding: 8px 15px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
 }
 
 /* أزرار أيقونة داخل الجدول (تعديل / حذف) */
@@ -350,6 +383,12 @@ header {
     margin-top: 20px;
 }
 
+.table-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -369,14 +408,21 @@ thead th {
     border-bottom: 1px solid #f0f0f0;
 }
 
+tbody tr {
+    border-bottom: 1px solid #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #fafafa;
+}
+
 /* خلية الإجراءات في الجدول */
 .actions-cell {
     display: flex;
     flex-direction: row-reverse;
     gap: 10px;
     align-items: center;
-    width: fit-content;
-    margin-right: -9px;
+    justify-content: flex-end;
 }
 
 /* ===========================
@@ -421,6 +467,11 @@ thead th {
     font-weight: 300;
     color: #aaa;
     cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
 }
 
 /* تخطيط الأعمدة داخل المودال */
@@ -429,18 +480,32 @@ thead th {
     gap: 40px;
 }
 
+.form-column {
+    flex: 1;
+}
+
 /* في مودال الكاشير والمستخدم نخليها عمود واحد */
 #addCashierModal .form-grid,
 #addUserModal .form-grid {
     display: block;
 }
 
+.modal-header {
+    margin-bottom: 25px;
+}
+
 .modal-header h3 {
     color: var(--primary-color);
 }
 
+.modal-footer {
+    margin-top: 25px;
+}
+
 .form-column h4 {
     color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
 /* مودال رسالة النجاح */
@@ -471,7 +536,17 @@ thead th {
    =========================== */
 @media (max-width: 768px) {
     .sidebar {
-        display: none;
+        transform: translateX(100%);
+        width: 280px;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar.hidden {
+        transform: translateX(100%);
+    }
+
+    .sidebar:not(.hidden) {
+        transform: translateX(0);
     }
 
     .main-content {
@@ -479,10 +554,15 @@ thead th {
         padding: 15px;
     }
 
-    .stats-grid,
-    .actions-grid,
-    .form-grid {
+    .stats-grid {
         grid-template-columns: 1fr;
+    }
+
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
         display: block;
     }
 
@@ -490,18 +570,34 @@ thead th {
     #addUserModal .modal-content {
         width: 95%;
     }
-}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    /* Overlay عند فتح القائمة على الجوال */
+    .sidebar:not(.hidden)::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
     .user-profile {
         padding: 1rem 1.5rem;
         height: 4rem;
     }
+    
     .user-profile .avatar {
         width: 2rem;
         height: 2rem;
     }
+    
     .user-profile .avatar iconify-icon {
         font-size: 2rem;
     }
@@ -512,70 +608,29 @@ thead th {
         padding: 0.75rem 1rem;
         height: 3rem;
     }
+    
     .user-profile .avatar {
         width: 1.5rem;
         height: 1.5rem;
     }
+    
     .user-profile .avatar iconify-icon {
         font-size: 1.5rem;
     }
-}
-
-/* Additional responsive adjustments for all devices */
-@media (min-width: 1200px) {
-    .user-profile {
-        padding: 1.5rem 3rem;
-        height: 6rem;
+    
+    .stats-grid {
+        gap: 10px;
     }
-    .user-profile .info h3 {
-        font-size: 1rem;
+    
+    .card {
+        padding: 15px;
     }
-    .user-profile .info h3 iconify-icon {
-        font-size: 1.25rem;
+    
+    table {
+        font-size: 12px;
     }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .user-profile {
-        padding: 1.25rem 2.5rem;
-        height: 5rem;
-    }
-    .user-profile .info h3 {
-        font-size: 0.9rem;
-    }
-    .user-profile .info h3 iconify-icon {
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .user-profile {
-        padding: 1rem 2rem;
-        height: 4.5rem;
-    }
-    .user-profile .info h3 {
-        font-size: 0.8rem;
-    }
-    .user-profile .info h3 iconify-icon {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .user-profile {
-        padding: 0.75rem 1rem;
-        height: 3.5rem;
-    }
-    .user-profile .info h3 {
-        font-size: 0.7rem;
-    }
-    .user-profile .info h3 iconify-icon {
-        font-size: 0.8rem;
-    }
-    .sidebar {
-        width: 200px;
-    }
-    .sidebar.hidden {
-        display: none;
+    
+    th, td {
+        padding: 10px 5px;
     }
 }
