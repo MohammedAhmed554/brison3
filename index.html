@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنصة الذكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<!-- الصفحة الرئيسية مباشرة بدون تسجيل دخول -->
+<div id="index-page" class="app-container" style="display:flex;">
+
+    <aside class="sidebar hidden">
+        <div class="logo-area">
+            <h2>المنصة الذكية</h2>
+            <span>SmartWallet</span>
+        </div>
+        
+        <nav>
+            <ul>
+                <li class="active" data-page="dashboard">
+                    <a href="#" onclick="showPage('dashboard')"><i class="fas fa-bars"></i> الرئيسية</a>
+                </li>
+                <li data-page="students-list">
+                    <a href="#" onclick="showPage('students-list')"><i class="fas fa-users"></i> الطلاب</a>
+                </li>
+                <li data-page="guardians-list">
+                    <a href="#" onclick="showPage('guardians-list')"><i class="fas fa-clock"></i> أولياء الأمور</a>
+                </li>
+                <li data-page="cashiers-list">
+                    <a href="#" onclick="showPage('cashiers-list')"><i class="fas fa-chart-bar"></i> الكاشير</a>
+                </li>
+                <li data-page="users-list">
+                    <a href="#" onclick="showPage('users-list')"><i class="fas fa-lock"></i> المستخدمين</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <ul>
+                <li><a href="#" onclick="openModal('passwordModal')"><i class="fas fa-key"></i> تغيير كلمة السر</a></li>
+                <li><a href="#"><i class="fas fa-headset"></i> الدعم الفني</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main-content sidebar-hidden">
+
+        <header>
+            <div class="user-profile">
+                <button id="sidebar-toggle" class="sidebar-toggle-btn"><i class="fas fa-bars"></i></button>
+                <div class="info">
+                    <h3><iconify-icon icon="solar:user-circle-outline"></iconify-icon> مدير النظام</h3>
+                    <span>الإدارة</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="page-section active">
+            <div class="stats-grid">
+                <div class="card stat-card">
+                    <div class="text"><span>اجمالي الطلاب</span><h3 id="total-students">0 طالب</h3></div>
+                    <div class="icon-circle"><i class="fas fa-users"></i></div>
+                </div>
+                <div class="card stat-card">
+                    <div class="text"><span>اجمالي أولياء الأمور</span><h3 id="total-guardians">0 ولي أمر</h3></div>
+                    <div class="icon-circle"><i class="far fa-clock"></i></div>
+                </div>
+                <div class="card stat-card">
+                    <div class="text"><span>اجمالي أجهزة الكاشير</span><h3 id="total-cashiers">0 كاشير</h3></div>
+                    <div class="icon-circle"><i class="fas fa-chart-column"></i></div>
+                </div>
+            </div>
+
+            <div class="actions-grid">
+
+                <div class="card action-card">
+    <div class="icon-large">
+        <iconify-icon icon="solar:users-group-two-rounded-line-duotone"></iconify-icon>
+    </div>
+    <h3>اضافة طالب جديد</h3>
+    <button class="btn-primary" onclick="openModal('addStudentModal')">
+        اضافة <i class="fas fa-plus-circle"></i>
+    </button>
+</div>
+
+
+
+                <div class="card action-card">
+                    <div class="icon-large"><i class="fas fa-chart-bar"></i></div>
+                    <h3>اضافة كاشير جديد</h3>
+                    <button class="btn-primary" onclick="openModal('addCashierModal')">اضافة <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+
+            <div class="table-section card">
+                <div class="table-header">
+                    <button class="btn-primary" onclick="showPage('students-list')" style="padding:8px 15px;">عرض الكل <i class="fas fa-chevron-left"></i></button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>اسم الطالب</th>
+                            <th>المرحلة الدراسية</th>
+                            <th>الجنس</th>
+                            <th>ولي الأمر</th>
+                            <th>الصف</th>
+                            <th>الرصيد</th>
+                            <th>رقم هاتف ولي الأمر</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-dashboard-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="students-list" class="page-section">
+            <div class="list-header">
+                <h2 style="color: var(--primary-color);">قائمة الطلاب</h2>
+                <button class="btn-primary" onclick="openModal('addStudentModal')">اضافة طالب جديد <i class="fas fa-plus-circle"></i></button>
+            </div>
+            <div class="table-section card">
+                <div class="list-controls" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <input type="text" placeholder="بحث باسم الطالب أو رقم الهاتف..." style="flex: 1; padding: 10px; border: 1px solid #eee; border-radius: 8px;">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>اسم الطالب</th>
+                            <th>المرحلة الدراسية</th>
+                            <th>الجنس</th>
+                            <th>ولي الأمر</th>
+                            <th>الصف</th>
+                            <th>الرصيد</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-list-body"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="guardians-list" class="page-section">
+            <h2 style="color: var(--primary-color);">قائمة أولياء الأمور</h2>
+            <div class="table-section card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>اسم ولي الأمر</th>
+                            <th>رقم الهاتف</th>
+                            <th>الرصيد الكلي للطلاب</th>
+                            <th>عدد الطلاب</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="guardians-list-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="cashiers-list" class="page-section">
+            <h2 style="color: var(--primary-color);">قائمة أجهزة الكاشير</h2>
+            <div class="table-section card">
+                <button class="btn-primary" onclick="openModal('addCashierModal')" style="margin-bottom: 20px;">اضافة كاشير جديد <i class="fas fa-plus-circle"></i></button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>اسم الموظف</th>  
+                            <th>رقم الجوال</th>  
+                            <th>المرحلة</th>  
+                            <th>الجنس</th>  
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cashiers-list-body"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="users-list" class="page-section">
+            <h2 style="color: var(--primary-color);">قائمة المستخدمين</h2>
+            <div class="table-section card">
+                <button class="btn-primary" onclick="openModal('addUserModal')" style="margin-bottom: 20px;">اضافة مستخدم جديد <i class="fas fa-plus-circle"></i></button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>الاسم</th>
+                            <th>المسمى الوظيفي</th>
+                            <th>رقم الهاتف</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-list-body"></tbody>
+                </table>
+            </div>
+        </div>
+        
+    </main>
+</div>
+
+<!-- Modals -->
+<div id="addStudentModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('addStudentModal')">&times;</span>
+        <div class="modal-header"><h3>اضافة طالب جديد</h3></div>
+        <form id="addStudentForm" onsubmit="addStudent(event)">
+            <div class="form-grid">
+                <div class="form-column right-col">
+                    <h4>البيانات الأساسية</h4>
+                    <div class="input-group"><label>الاسم الأول*</label><input type="text" id="student-first-name" placeholder="محمد" required></div>
+                    <div class="input-group"><label>اسم الأب*</label><input type="text" id="student-father-name" placeholder="علي" required></div>
+                    <div class="input-group"><label>الاسم الأخير*</label><input type="text" id="student-last-name" placeholder="العنزي" required></div>
+                    <div class="input-group">
+                        <label>المرحلة الدراسية*</label>
+                        <select id="student-stage">
+                            <option value="ابتدائي">ابتدائي</option>
+                            <option value="متوسط">متوسط</option>
+                            <option value="ثانوي">ثانوي</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>الجنس*</label>
+                        <select id="student-gender">
+                            <option value="بنين">بنين</option>
+                            <option value="بنات">بنات</option>
+                        </select>
+                    </div>
+                    <div class="input-group"><label>الصف*</label><input type="text" id="student-grade" placeholder="الأول"></div>
+                </div>
+                <div class="form-column left-col">
+                    <h4>بيانات ولي الأمر</h4>
+                    <div class="input-group"><label>رقم جوال ولي الأمر*</label><input type="text" id="guardian-phone" placeholder="05xxxxxxxx" required></div>
+                    <div class="input-group"><label>اسم ولي الأمر</label><input type="text" id="guardian-name" placeholder="أحمد العنزي" required></div>
+                </div>
+            </div>
+            <div class="modal-footer"><button type="submit" class="btn-primary full-width">اضافة</button></div>
+        </form>
+    </div>
+</div>
+
+<div id="addCashierModal" class="modal-overlay">
+    <div class="modal-content"> 
+        <span class="close-btn" onclick="closeModal('addCashierModal')">&times;</span>
+        <div class="modal-header"><h3>اضافة كاشير جديد (بيانات الموظف)</h3></div>
+        <form id="addCashierForm" onsubmit="addCashier(event)">
+            <div class="form-grid">
+                <div class="form-column right-col" style="flex: 100%;">
+                    <h4>البيانات الأساسية</h4>
+                    <div class="input-group"><label>الاسم الأول*</label><input type="text" id="cashier-first-name" required></div>
+                    <div class="input-group"><label>اسم الأب*</label><input type="text" id="cashier-father-name" required></div>
+                    <div class="input-group"><label>الاسم الأخير*</label><input type="text" id="cashier-last-name" required></div>
+                    <div class="input-group"><label>رقم الجوال*</label><input type="text" id="cashier-phone" placeholder="05xxxxxxxx" required></div>
+                    <div class="input-group">
+                        <label>الجنس*</label>
+                        <select id="cashier-gender">
+                            <option value="ذكر">ذكر</option>
+                            <option value="أنثى">أنثى</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>المرحلة الدراسية / الوظيفية*</label>
+                        <select id="cashier-stage">
+                            <option value="ابتدائي">ابتدائي</option>
+                            <option value="متوسط">متوسط</option>
+                            <option value="ثانوي">ثانوي</option>
+                        </select>
+                    </div>
+                    <div class="input-group"><label>كلمة السر*</label><input type="password" id="cashier-password" required></div>
+                </div>
+            </div>
+            <div class="modal-footer"><button type="submit" class="btn-primary full-width">اضافة</button></div>
+        </form>
+    </div>
+</div>
+
+<div id="addUserModal" class="modal-overlay">
+    <div class="modal-content success-box" style="width: 450px;">
+        <span class="close-btn" onclick="closeModal('addUserModal')">&times;</span>
+        <div class="modal-header"><h3>اضافة مستخدم جديد</h3></div>
+        <form id="addUserForm" onsubmit="addUser(event)">
+            <div class="input-group"><label>الاسم الكامل*</label><input type="text" id="user-name" required></div>
+            <div class="input-group"><label>المسمى الوظيفي*</label><input type="text" id="user-role" required></div>
+            <div class="input-group"><label>رقم الهاتف*</label><input type="text" id="user-phone" required></div>
+            <div class="input-group"><label>كلمة السر*</label><input type="password" id="user-password" required></div>
+            <button type="submit" class="btn-primary full-width" style="margin-top: 20px;">اضافة</button>
+        </form>
+    </div>
+</div>
+
+<div id="successModal" class="modal-overlay">
+    <div class="modal-content success-box">
+        <span class="close-btn" onclick="closeModal('successModal')">&times;</span>
+        <div class="success-icon"><i class="fas fa-thumbs-up"></i></div>
+        <h3>تمت العملية بنجاح!</h3>
+        <button class="btn-primary full-width" onclick="closeModal('successModal')">حسناً</button>
+    </div>
+</div>
+
+<div id="deleteConfirmModal" class="modal-overlay">
+    <div class="modal-content success-box" style="width: 450px;">
+        <span class="close-btn" onclick="closeModal('deleteConfirmModal')">&times;</span>
+        <div class="modal-header"><h3 style="color: #dc3545;">تأكيد الحذف</h3></div>
+        <p style="margin-bottom: 20px;">هل أنت متأكد أنك تريد حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.</p>
+        <button class="btn-danger" id="confirmDeleteBtn" onclick="confirmDelete()">تأكيد الحذف</button>
+        <button class="btn-primary" style="background-color: #6c757d; margin-right: 10px;" onclick="closeModal('deleteConfirmModal')">إلغاء</button>
+    </div>
+</div>
+
+<div id="passwordModal" class="modal-overlay">
+    <div class="modal-content success-box" style="width: 450px;">
+        <span class="close-btn" onclick="closeModal('passwordModal')">&times;</span>
+        <div class="modal-header"><h3>تغيير كلمة السر</h3></div>
+        <form>
+            <div class="input-group"><label>كلمة السر القديمة*</label><input type="password" required></div>
+            <div class="input-group"><label>كلمة السر الجديدة*</label><input type="password" required></div>
+            <div class="input-group"><label>تأكيد كلمة السر الجديدة*</label><input type="password" required></div>
+            <button type="submit" class="btn-primary full-width" style="margin-top: 20px;">حفظ</button>
+        </form>
+    </div>
+</div>
+
+<!-- ملف السكربت الخارجي -->
+<script src="script.js"></script>
+</body>
+</html>
