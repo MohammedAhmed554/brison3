@@ -23,26 +23,26 @@
         <nav>
             <ul>
                 <li class="active" data-page="dashboard">
-                    <a href="#" onclick="showPage('dashboard')"><i class="fas fa-bars"></i> الرئيسية</a>
+                    <a href="#" onclick="showPage('dashboard'); return false;"><i class="fas fa-bars"></i> الرئيسية</a>
                 </li>
                 <li data-page="students-list">
-                    <a href="#" onclick="showPage('students-list')"><i class="fas fa-users"></i> الطلاب</a>
+                    <a href="#" onclick="showPage('students-list'); return false;"><i class="fas fa-users"></i> الطلاب</a>
                 </li>
                 <li data-page="guardians-list">
-                    <a href="#" onclick="showPage('guardians-list')"><i class="fas fa-clock"></i> أولياء الأمور</a>
+                    <a href="#" onclick="showPage('guardians-list'); return false;"><i class="fas fa-clock"></i> أولياء الأمور</a>
                 </li>
                 <li data-page="cashiers-list">
-                    <a href="#" onclick="showPage('cashiers-list')"><i class="fas fa-chart-bar"></i> الكاشير</a>
+                    <a href="#" onclick="showPage('cashiers-list'); return false;"><i class="fas fa-chart-bar"></i> الكاشير</a>
                 </li>
                 <li data-page="users-list">
-                    <a href="#" onclick="showPage('users-list')"><i class="fas fa-lock"></i> المستخدمين</a>
+                    <a href="#" onclick="showPage('users-list'); return false;"><i class="fas fa-lock"></i> المستخدمين</a>
                 </li>
             </ul>
         </nav>
 
         <div class="sidebar-footer">
             <ul>
-                <li><a href="#" onclick="openModal('passwordModal')"><i class="fas fa-key"></i> تغيير كلمة السر</a></li>
+                <li><a href="#" onclick="openModal('passwordModal'); return false;"><i class="fas fa-key"></i> تغيير كلمة السر</a></li>
                 <li><a href="#"><i class="fas fa-headset"></i> الدعم الفني</a></li>
             </ul>
         </div>
@@ -78,18 +78,15 @@
             </div>
 
             <div class="actions-grid">
-
                 <div class="card action-card">
-    <div class="icon-large">
-        <iconify-icon icon="solar:users-group-two-rounded-line-duotone"></iconify-icon>
-    </div>
-    <h3>اضافة طالب جديد</h3>
-    <button class="btn-primary" onclick="openModal('addStudentModal')">
-        اضافة <i class="fas fa-plus-circle"></i>
-    </button>
-</div>
-
-
+                    <div class="icon-large">
+                        <iconify-icon icon="solar:users-group-two-rounded-line-duotone"></iconify-icon>
+                    </div>
+                    <h3>اضافة طالب جديد</h3>
+                    <button class="btn-primary" onclick="openModal('addStudentModal')">
+                        اضافة <i class="fas fa-plus-circle"></i>
+                    </button>
+                </div>
 
                 <div class="card action-card">
                     <div class="icon-large"><i class="fas fa-chart-bar"></i></div>
