@@ -169,7 +169,7 @@ header {
 .user-profile {
     display: flex;
     align-items: center;
-    background: #fefefe;
+    background: #fbfafa;
     padding: 1.25rem 2.5rem;
     border-radius: 0;
     width: 100%;
@@ -198,17 +198,26 @@ header {
 
 .user-profile .info h3 {
     font-size: 14px;
+     color: var(--primary-color);
+    position: relative;
+    padding-right: 30px;
 }
 
 .user-profile .info h3 iconify-icon {
-    font-size: 18px;
+    font-size: 30px;
+    color: var(--primary-color);
+    position: absolute;
+    left: 90px;
+    top: 100%;
+    transform: translateY(-50%);
 }
 
 .user-profile .info span {
     font-size: 12px;
     color: var(--gray-text);
+    display: block;
+    padding-right: 30px;
 }
-
 /* هيدر قوائم مثل صفحة الطلاب */
 .list-header {
     display: flex;
@@ -304,8 +313,8 @@ header {
 }
 
 .btn-danger {
-    background-color: #dc3545;
-    color: #ffffff;
+    background-color: #fcfbfb;
+    color: #f55959;
     border: none;
     padding: 8px 15px;
     border-radius: 6px;
@@ -315,7 +324,7 @@ header {
 }
 
 .btn-danger:hover {
-    background-color: #c82333;
+    background-color: #ffffff;
 }
 
 /* أزرار أيقونة داخل الجدول (تعديل / حذف) */
@@ -434,7 +443,7 @@ tbody tr:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(250, 249, 249, 0.4);
     display: none;
     justify-content: center;
     align-items: center;
@@ -584,7 +593,7 @@ tbody tr:hover {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgb(253, 252, 252);
         z-index: -1;
     }
 
@@ -634,3 +643,4 @@ tbody tr:hover {
         padding: 10px 5px;
     }
 }
+
