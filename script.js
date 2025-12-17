@@ -162,7 +162,7 @@ function renderGuardiansTable() {
                 <i class="fas fa-trash-alt"></i>
             </button>
             <button class="btn-icon-table" onclick="alert('تفاصيل الطلاب: ${guardian.students.join(', ')}')">
-                <i class="fas fa-eye"></i>
+                <iconify-icon icon="solar:eye-outline"></iconify-icon>
             </button>
         `;
     });
