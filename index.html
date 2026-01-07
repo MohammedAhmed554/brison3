@@ -6,7 +6,6 @@
     <title>المنصة الذكية</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
@@ -27,47 +26,24 @@
                     <a href="#" onclick="showPage('dashboard'); return false;"><i class="fas fa-bars"></i> الرئيسية</a>
                 </li>
                 <li data-page="students-list">
-                    <a href="#" onclick="showPage('students-list'); return false;">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:users-group-two-rounded-line-duotone" class="student-icon iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="6" r="4"></circle><path stroke-linecap="round" d="M18 9c1.657 0 3-1.12 3-2.5S19.657 4 18 4M6 9C4.343 9 3 7.88 3 6.5S4.343 4 6 4" opacity=".5"></path><ellipse cx="12" cy="17" rx="6" ry="4"></ellipse><path stroke-linecap="round" d="M20 19c1.754-.385 3-1.359 3-2.5s-1.246-2.115-3-2.5M4 19c-1.754-.385-3-1.359-3-2.5s1.246-2.115 3-2.5" opacity=".5"></path></g></svg>
-                        <span style="margin-right: 10px;">الطلاب</span>
-                    </a>
+                    <a href="#" onclick="showPage('students-list'); return false;"><i class="fas fa-users"></i> الطلاب</a>
                 </li>
                 <li data-page="guardians-list">
-                    <a href="#" onclick="showPage('guardians-list'); return false;">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:pie-chart-3-broken" class="guardian-icon iconify iconify--solar"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6.444 3.685a10 10 0 0 1 1.662-.896c1.403-.593 2.104-.89 3-.296C12 3.086 12 4.057 12 6v2c0 1.886 0 2.828.586 3.414S14.114 12 16 12h2c1.942 0 2.914 0 3.507.895s.297 1.596-.296 3a10 10 0 0 1-11.162 5.913A10 10 0 0 1 3.34 7M14.5 2.315A10.02 10.02 0 0 1 21.685 9.5"></path></svg>
-                        أولياء الأمور
-                    </a>
+                    <a href="#" onclick="showPage('guardians-list'); return false;"><i class="fas fa-clock"></i> أولياء الأمور</a>
                 </li>
                 <li data-page="cashiers-list">
-                    <a href="#" onclick="showPage('cashiers-list'); return false;">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:chart-2-broken" class="cashier-icon iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 22h18"></path><path stroke-linecap="round" d="M3 17c0 .943 0 1.414.293 1.707S4.057 19 5 19s1.414 0 1.707-.293S7 17.943 7 17v-6c0-.943 0-1.414-.293-1.707S5.943 9 5 9s-1.414 0-1.707.293S3 10.057 3 11v2"></path><path d="M10 7c0-.943 0-1.414.293-1.707S11.057 5 12 5s1.414 0 1.707.293S14 6.057 14 7v10c0 .943 0 1.414-.293 1.707S12.943 19 12 19s-1.414 0-1.707-.293S10 17.943 10 17z"></path><path stroke-linecap="round" d="M21 11v6c0 .943 0 1.414-.293 1.707S19.943 19 19 19s-1.414 0-1.707-.293S17 17.943 17 17V4c0-.943 0-1.414.293-1.707S18.057 2 19 2s1.414 0 1.707.293S21 3.057 21 4v3"></path></g></svg>
-                        الكاشير
-                    </a>
+                    <a href="#" onclick="showPage('cashiers-list'); return false;"><i class="fas fa-chart-bar"></i> الكاشير</a>
                 </li>
                 <li data-page="users-list">
-                    <a href="#" onclick="showPage('users-list'); return false;">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:lock-keyhole-minimalistic-line-duotone" class="user-icon iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 16c0-2.828 0-4.243.879-5.121C3.757 10 5.172 10 8 10h8c2.828 0 4.243 0 5.121.879C22 11.757 22 13.172 22 16s0 4.243-.879 5.121C20.243 22 18.828 22 16 22H8c-2.828 0-4.243 0-5.121-.879C2 20.243 2 18.828 2 16Z"></path><path stroke-linecap="round" d="M12 14v4m-6-8V8a6 6 0 1 1 12 0v2" opacity=".5"></path></g></svg>
-                        المستخدمين
-                    </a>
+                    <a href="#" onclick="showPage('users-list'); return false;"><i class="fas fa-lock"></i> المستخدمين</a>
                 </li>
             </ul>
         </nav>
 
         <div class="sidebar-footer">
             <ul>
-                <li><a href="#" onclick="openModal('passwordModal'); return false;">
-                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.6em" height="1.6em" viewBox="0 0 24 24" data-icon="password-box-dots" class="password-icon iconify iconify--custom">
-                        <rect x="2" y="3" width="20" height="18" rx="4" ry="4" fill="none" stroke="currentColor" stroke-width="1.6" />
-                        <circle cx="8" cy="12" r="1.1" fill="currentColor" />
-                        <circle cx="12" cy="12" r="1.1" fill="currentColor" />
-                        <circle cx="16" cy="12" r="1.1" fill="currentColor" />
-                    </svg>
-                    <span style="margin-right: 12px;">تغيير كلمة السر</span>
-                </a></li>
-                <li><a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="phone-support-arrow" class="support-icon iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="m10.038 5.316l.649 1.163c.585 1.05.35 2.426-.572 3.349c0 0-1.12 1.119.91 3.148c2.028 2.028 3.147.91 3.147.91c.923-.923 2.3-1.158 3.349-.573l1.163.65c1.585.884 1.772 3.106.379 4.5c-.837.836-1.863 1.488-2.996 1.53c-1.908.073-5.149-.41-8.4-3.66c-3.25-3.251-3.733-6.492-3.66-8.4c.043-1.133.694-2.159 1.53-2.996c1.394-1.393 3.616-1.206 4.5.38Z" opacity=".5"></path><path stroke-linecap="round" stroke-linejoin="round" d="m19 5l-4 4m0 0V6m0 3h3"></path></g></svg>
-                    الدعم الفني
-                </a></li>
+                <li><a href="#" onclick="openModal('passwordModal'); return false;"><i class="fas fa-key"></i> تغيير كلمة السر</a></li>
+                <li><a href="#"><i class="fas fa-headset"></i> الدعم الفني</a></li>
             </ul>
         </div>
     </aside>
@@ -82,38 +58,29 @@
                     <span>الإدارة</span>
                 </div>
             </div>
-
-                <!-- ملف السكربت الخارجي -->
-            </header>
-
+        </header>
 
         <!-- Dashboard -->
         <div id="dashboard" class="page-section active">
             <div class="stats-grid">
                 <div class="card stat-card">
                     <div class="text"><span>اجمالي الطلاب</span><h3 id="total-students">0 طالب</h3></div>
-                    <div class="icon-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:users-group-two-rounded-line-duotone" class="student-icon iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="6" r="4"></circle><path stroke-linecap="round" d="M18 9c1.657 0 3-1.12 3-2.5S19.657 4 18 4M6 9C4.343 9 3 7.88 3 6.5S4.343 4 6 4" opacity=".5"></path><ellipse cx="12" cy="17" rx="6" ry="4"></ellipse><path stroke-linecap="round" d="M20 19c1.754-.385 3-1.359 3-2.5s-1.246-2.115-3-2.5M4 19c-1.754-.385-3-1.359-3-2.5s1.246-2.115 3-2.5" opacity=".5"></path></g></svg>
-                    </div>
+                    <div class="icon-circle"><i class="fas fa-users"></i></div>
                 </div>
                 <div class="card stat-card">
                     <div class="text"><span>اجمالي أولياء الأمور</span><h3 id="total-guardians">0 ولي أمر</h3></div>
-                    <div class="icon-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:pie-chart-3-broken" class="guardian-icon iconify iconify--solar"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6.444 3.685a10 10 0 0 1 1.662-.896c1.403-.593 2.104-.89 3-.296C12 3.086 12 4.057 12 6v2c0 1.886 0 2.828.586 3.414S14.114 12 16 12h2c1.942 0 2.914 0 3.507.895s.297 1.596-.296 3a10 10 0 0 1-11.162 5.913A10 10 0 0 1 3.34 7M14.5 2.315A10.02 10.02 0 0 1 21.685 9.5"></path></svg>
-                    </div>
+                    <div class="icon-circle"><i class="far fa-clock"></i></div>
                 </div>
                 <div class="card stat-card">
                     <div class="text"><span>اجمالي أجهزة الكاشير</span><h3 id="total-cashiers">0 كاشير</h3></div>
-                    <div class="icon-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:chart-2-broken" class="cashier-icon iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 22h18"></path><path stroke-linecap="round" d="M3 17c0 .943 0 1.414.293 1.707S4.057 19 5 19s1.414 0 1.707-.293S7 17.943 7 17v-6c0-.943 0-1.414-.293-1.707S5.943 9 5 9s-1.414 0-1.707.293S3 10.057 3 11v2"></path><path d="M10 7c0-.943 0-1.414.293-1.707S11.057 5 12 5s1.414 0 1.707.293S14 6.057 14 7v10c0 .943 0 1.414-.293 1.707S12.943 19 12 19s-1.414 0-1.707-.293S10 17.943 10 17z"></path><path stroke-linecap="round" d="M21 11v6c0 .943 0 1.414-.293 1.707S19.943 19 19 19s-1.414 0-1.707-.293S17 17.943 17 17V4c0-.943 0-1.414.293-1.707S18.057 2 19 2s1.414 0 1.707.293S21 3.057 21 4v3"></path></g></svg>
-                    </div>
+                    <div class="icon-circle"><i class="fas fa-chart-column"></i></div>
                 </div>
             </div>
 
             <div class="actions-grid">
                 <div class="card action-card">
                     <div class="icon-large">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:users-group-two-rounded-line-duotone" class="student-icon icon-large-img iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="6" r="4"></circle><path stroke-linecap="round" d="M18 9c1.657 0 3-1.12 3-2.5S19.657 4 18 4M6 9C4.343 9 3 7.88 3 6.5S4.343 4 6 4" opacity=".5"></path><ellipse cx="12" cy="17" rx="6" ry="4"></ellipse><path stroke-linecap="round" d="M20 19c1.754-.385 3-1.359 3-2.5s-1.246-2.115-3-2.5M4 19c-1.754-.385-3-1.359-3-2.5s1.246-2.115 3-2.5" opacity=".5"></path></g></svg>
+                        <iconify-icon icon="solar:users-group-two-rounded-line-duotone"></iconify-icon>
                     </div>
                     <h3>اضافة طالب جديد</h3>
                     <button class="btn-primary" onclick="openModal('addStudentModal')">
@@ -122,9 +89,7 @@
                 </div>
 
                 <div class="card action-card">
-                    <div class="icon-large">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:chart-2-broken" class="cashier-icon icon-large-guardian iconify iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 22h18"></path><path stroke-linecap="round" d="M3 17c0 .943 0 1.414.293 1.707S4.057 19 5 19s1.414 0 1.707-.293S7 17.943 7 17v-6c0-.943 0-1.414-.293-1.707S5.943 9 5 9s-1.414 0-1.707.293S3 10.057 3 11v2"></path><path d="M10 7c0-.943 0-1.414.293-1.707S11.057 5 12 5s1.414 0 1.707.293S14 6.057 14 7v10c0 .943 0 1.414-.293 1.707S12.943 19 12 19s-1.414 0-1.707-.293S10 17.943 10 17z"></path><path stroke-linecap="round" d="M21 11v6c0 .943 0 1.414-.293 1.707S19.943 19 19 19s-1.414 0-1.707-.293S17 17.943 17 17V4c0-.943 0-1.414.293-1.707S18.057 2 19 2s1.414 0 1.707.293S21 3.057 21 4v3"></path></g></svg>
-                    </div>
+                    <div class="icon-large"><i class="fas fa-chart-bar"></i></div>
                     <h3>اضافة كاشير جديد</h3>
                     <button class="btn-primary" onclick="openModal('addCashierModal')">اضافة <i class="fas fa-plus-circle"></i></button>
                 </div>
@@ -241,10 +206,6 @@
     </main>
 </div>
 
-<script src="script.js"></script>
-</body>
-</html>
-
 <!-- Modals -->
 <div id="addStudentModal" class="modal-overlay">
     <div class="modal-content">
@@ -285,26 +246,51 @@
     </div>
 </div>
 
-
+<div id="addCashierModal" class="modal-overlay">
+    <div class="modal-content"> 
+        <span class="close-btn" onclick="closeModal('addCashierModal')">&times;</span>
+        <div class="modal-header"><h3>اضافة كاشير جديد (بيانات الموظف)</h3></div>
+        <form id="addCashierForm" onsubmit="addCashier(event)">
+            <div class="form-grid">
+                <div class="form-column right-col" style="flex: 100%;">
+                    <h4>البيانات الأساسية</h4>
+                    <div class="input-group"><label>الاسم الأول*</label><input type="text" id="cashier-first-name" required></div>
+                    <div class="input-group"><label>اسم الأب*</label><input type="text" id="cashier-father-name" required></div>
+                    <div class="input-group"><label>الاسم الأخير*</label><input type="text" id="cashier-last-name" required></div>
+                    <div class="input-group"><label>رقم الجوال*</label><input type="text" id="cashier-phone" placeholder="05xxxxxxxx" required></div>
+                    <div class="input-group">
+                        <label>الجنس*</label>
+                        <select id="cashier-gender">
+                            <option value="ذكر">ذكر</option>
+                            <option value="أنثى">أنثى</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>المرحلة الدراسية / الوظيفية*</label>
+                        <select id="cashier-stage">
+                            <option value="ابتدائي">ابتدائي</option>
+                            <option value="متوسط">متوسط</option>
+                            <option value="ثانوي">ثانوي</option>
+                        </select>
+                    </div>
+                    <div class="input-group"><label>كلمة السر*</label><input type="password" id="cashier-password" required></div>
+                </div>
+            </div>
+            <div class="modal-footer"><button type="submit" class="btn-primary full-width">اضافة</button></div>
+        </form>
+    </div>
+</div>
 
 <div id="addUserModal" class="modal-overlay">
-    <div class="modal-content">
+    <div class="modal-content success-box" style="width: 450px;">
         <span class="close-btn" onclick="closeModal('addUserModal')">&times;</span>
         <div class="modal-header"><h3>اضافة مستخدم جديد</h3></div>
         <form id="addUserForm" onsubmit="addUser(event)">
-            <div class="form-grid">
-                <div class="form-column right-col">
-                    <div class="input-group"><label>الاسم الكامل*</label><input type="text" id="user-name" required></div>
-                    <div class="input-group"><label>الاسم الأوسط</label><input type="text" id="user-middle-name"></div>
-                    <div class="input-group"><label>الاسم الأخير</label><input type="text" id="user-last-name"></div>
-                </div>
-                <div class="form-column left-col">
-                    <div class="input-group"><label>المسمى الوظيفي*</label><input type="text" id="user-role" required></div>
-                    <div class="input-group"><label>رقم الهاتف*</label><input type="text" id="user-phone" required></div>
-                    <div class="input-group"><label>كلمة السر*</label><input type="password" id="user-password" required></div>
-                </div>
-            </div>
-            <div class="modal-footer"><button type="submit" class="btn-primary">اضافة</button></div>
+            <div class="input-group"><label>الاسم الكامل*</label><input type="text" id="user-name" required></div>
+            <div class="input-group"><label>المسمى الوظيفي*</label><input type="text" id="user-role" required></div>
+            <div class="input-group"><label>رقم الهاتف*</label><input type="text" id="user-phone" required></div>
+            <div class="input-group"><label>كلمة السر*</label><input type="password" id="user-password" required></div>
+            <button type="submit" class="btn-primary full-width" style="margin-top: 20px;">اضافة</button>
         </form>
     </div>
 </div>
@@ -312,10 +298,7 @@
 <div id="successModal" class="modal-overlay">
     <div class="modal-content success-box">
         <span class="close-btn" onclick="closeModal('successModal')">&times;</span>
-        <div class="success-icon">
-            <img src="confetti-strip.png" alt="احتفال" class="celebration-img">
-            <i class="fas fa-thumbs-up"></i>
-        </div>
+        <div class="success-icon"><i class="fas fa-thumbs-up"></i></div>
         <h3>تمت العملية بنجاح!</h3>
         <button class="btn-primary full-width" onclick="closeModal('successModal')">حسناً</button>
     </div>
@@ -331,37 +314,20 @@
     </div>
 </div>
 
-<div id="addCashierModal" class="modal-overlay">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('addCashierModal')">&times;</span>
-        <div class="modal-header"><h3>اضافة كاشير جديد (بيانات الموظف)</h3></div>
-        <form id="addCashierForm" onsubmit="addCashier(event)">
-            <div class="form-grid">
-                <div class="form-column right-col">
-                    <h4>البيانات الأساسية</h4>
-                    <div class="input-group"><label>الاسم الأول*</label><input type="text" id="cashier-first-name" required></div>
-                    <div class="input-group"><label>اسم الأب*</label><input type="text" id="cashier-father-name" required></div>
-                    <div class="input-group"><label>الاسم الأخير*</label><input type="text" id="cashier-last-name" required></div>
-                </div>
-                <div class="form-column left-col">
-                    <div class="input-group"><label>رقم الجوال*</label><input type="text" id="cashier-phone" placeholder="05xxxxxxxx" required></div>
-                    <div class="input-group"><label>الجنس*</label>
-                        <select id="cashier-gender">
-                            <option value="ذكر">ذكر</option>
-                            <option value="أنثى">أنثى</option>
-                        </select>
-                    </div>
-                    <div class="input-group"><label>المرحلة الدراسية / الوظيفية*</label>
-                        <select id="cashier-stage">
-                            <option value="ابتدائي">ابتدائي</option>
-                            <option value="متوسط">متوسط</option>
-                            <option value="ثانوي">ثانوي</option>
-                        </select>
-                    </div>
-                    <div class="input-group"><label>كلمة السر*</label><input type="password" id="cashier-password" required></div>
-                </div>
-            </div>
-            <div class="modal-footer"><button type="submit" class="btn-primary">اضافة</button></div>
+<div id="passwordModal" class="modal-overlay">
+    <div class="modal-content success-box" style="width: 450px;">
+        <span class="close-btn" onclick="closeModal('passwordModal')">&times;</span>
+        <div class="modal-header"><h3>تغيير كلمة السر</h3></div>
+        <form>
+            <div class="input-group"><label>كلمة السر القديمة*</label><input type="password" required></div>
+            <div class="input-group"><label>كلمة السر الجديدة*</label><input type="password" required></div>
+            <div class="input-group"><label>تأكيد كلمة السر الجديدة*</label><input type="password" required></div>
+            <button type="submit" class="btn-primary full-width" style="margin-top: 20px;">حفظ</button>
         </form>
     </div>
 </div>
+
+<!-- ملف السكربت الخارجي -->
+<script src="script.js"></script>
+</body>
+</html>
