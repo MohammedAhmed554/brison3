@@ -62,17 +62,6 @@ function showPage(pageId) {
     document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
     const activeLi = document.querySelector(`.sidebar li[data-page="${pageId}"]`);
     if (activeLi) activeLi.classList.add('active');
-    // update main page title text from the active sidebar link (use its text without icons)
-    const pageTitleEl = document.getElementById('page-title');
-    if (pageTitleEl) {
-        const link = activeLi ? activeLi.querySelector('a') : null;
-        if (link) {
-            // get the visible text of the link (trim and remove extra whitespace)
-            pageTitleEl.textContent = link.textContent.trim();
-        } else {
-            pageTitleEl.textContent = '';
-        }
-    }
     
     if (pageId === 'students-list') {
         renderStudentsTable('students-list-body', students);
@@ -138,7 +127,7 @@ function renderStudentsTable(tbodyId, data) {
             actionsCell.classList.add('actions-cell');
             actionsCell.innerHTML = `
                 <button class="btn-danger" onclick="deleteItem('student', ${student.id})">
-                    <i class="ri-delete-bin-6-line"></i>
+                    <i class="fas fa-trash-alt"></i>
                 </button>
             `;
         } else {
@@ -170,7 +159,7 @@ function renderGuardiansTable() {
         actionsCell.classList.add('actions-cell');
         actionsCell.innerHTML = `
             <button class="btn-danger" onclick="alert('حذف ولي الأمر ليس إجراءً مباشراً في هذا النظام.')">
-                <i class="ri-delete-bin-6-line"></i>
+                <i class="fas fa-trash-alt"></i>
             </button>
             <button class="btn-icon-table" onclick="alert('تفاصيل الطلاب: ${guardian.students.join(', ')}')">
                 <iconify-icon icon="solar:eye-outline"></iconify-icon>
@@ -202,7 +191,7 @@ function renderCashiersTable() {
         actionsCell.classList.add('actions-cell');
         actionsCell.innerHTML = `
             <button class="btn-danger" onclick="deleteItem('cashier', ${cashier.id})">
-                <i class="ri-delete-bin-6-line"></i>
+                <i class="fas fa-trash-alt"></i>
             </button>
         `;
     });
@@ -230,7 +219,7 @@ function renderUsersTable() {
         actionsCell.classList.add('actions-cell');
         actionsCell.innerHTML = `
             <button class="btn-danger" onclick="deleteItem('user', ${user.id})">
-                <i class="ri-delete-bin-6-line"></i>
+                <i class="fas fa-trash-alt"></i>
             </button>
         `;
     });
